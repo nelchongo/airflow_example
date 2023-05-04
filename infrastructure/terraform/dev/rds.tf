@@ -1,6 +1,6 @@
 locals {
   rds_name = "${local.app_name}-rds"
-  rds_secret_name = "${local.tags.env}/${local.rds_name}/postgres"
+  rds_secret_name = "${local.tags.env}/${local.rds_name}/app-postgres"
 }
 
 #Secret Manager
@@ -25,7 +25,7 @@ resource "aws_secretsmanager_secret_version" "rds_secret_version" {
 resource "aws_db_subnet_group" "main" {
   count      = 1
   name       = "${local.rds_name}-${local.tags.env}-rds-subnet-group"
-  subnet_ids = local.private_subnets
+  subnet_ids = module.app_vpc.private_subnets
   tags       = local.tags
 }
 
@@ -33,19 +33,8 @@ resource "aws_security_group" "rds" {
   count       = 1
   name        = "${local.rds_name}-${local.tags.env}-rds-sg"
   description = "Application database - ${local.app_name}"
-  vpc_id      = local.vpc_id
+  vpc_id      = module.app_vpc.vpc_id
   tags        = local.tags
-}
-
-resource "aws_security_group_rule" "allow_ingress_rds" {
-  count             = 1
-  description       = "Allow all inbound traffic"
-  type              = "ingress"
-  protocol          = "-1"
-  from_port         = 5432
-  to_port           = 5432
-  cidr_blocks       = ["172.31.0.0/16"]
-  security_group_id = aws_security_group.rds[0].id
 }
 
 resource "aws_security_group_rule" "allow_egress_rds" {
@@ -60,30 +49,19 @@ resource "aws_security_group_rule" "allow_egress_rds" {
   security_group_id = aws_security_group.rds[0].id
 }
 
-# resource "aws_security_group_rule" "allow_dbaccess_from_instances_to_rds" {
-#   count                    = 1
-#   description              = "Allow database access from application instances"
-#   type                     = "ingress"
-#   from_port                = 5432
-#   to_port                  = 5432
-#   protocol                 = "tcp"
-#   source_security_group_id = aws_security_group.instances.id
-#   security_group_id        = aws_security_group.rds[0].id
-# }
-
-resource "aws_security_group_rule" "allow_dbaccess_from_given_ips" {
-  count                    = length(local.rds_allowed_ip4_cidrs) > 0 ? 1 : 0
-  description              = "Allow database access from each ranges"
+resource "aws_security_group_rule" "allow_dbaccess_from_instances_to_rds" {
+  count                    = 1
+  description              = "Allow database access from application instances"
   type                     = "ingress"
   from_port                = 5432
   to_port                  = 5432
   protocol                 = "tcp"
-  cidr_blocks              = local.rds_allowed_ip4_cidrs
+  source_security_group_id = aws_security_group.instances.id
   security_group_id        = aws_security_group.rds[0].id
 }
 
 resource "aws_security_group_rule" "allow_dbaccess_from_given_sg" {
-  for_each                 = toset(local.rds_allowed_sg)
+  for_each                 = toset([module.app_tg_sg.this_security_group_id])
   description              = "Allow database access from each security group"
   type                     = "ingress"
   from_port                = 5432
@@ -126,10 +104,9 @@ data "aws_availability_zones" "current" {
 
 resource "aws_db_instance" "this" {
   count = 1
-  # db_name           = local.rds_name
   identifier        = local.rds_name
   engine            = "postgres"
-  engine_version    = "13.4"
+  engine_version    = "13.7"
   instance_class    = local.rds_instance_size
   allocated_storage = local.rds_allocated_storage
   storage_type      = local.rds_storage_type
@@ -155,7 +132,7 @@ resource "aws_db_instance" "this" {
   maintenance_window          = "tue:04:00-tue:05:00"
   backup_window               = null
   backup_retention_period     = 30
-  deletion_protection         = true
+  deletion_protection         = false
   skip_final_snapshot         = true
   monitoring_interval         = 0
   monitoring_role_arn         = null
