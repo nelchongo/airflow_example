@@ -54,7 +54,7 @@ resource "aws_ecs_service" "service" {
   enable_execute_command             = true
   tags                               = local.tags
   propagate_tags                     = "TASK_DEFINITION"
-  health_check_grace_period_seconds  = 0
+  health_check_grace_period_seconds  = 300
 
   load_balancer {
     target_group_arn = aws_lb_target_group.tg.id

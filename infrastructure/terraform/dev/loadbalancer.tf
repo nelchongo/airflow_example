@@ -9,7 +9,7 @@ resource "aws_lb_target_group" "tg" {
     target_type = "ip"
     vpc_id      = module.app_vpc.vpc_id
     health_check {
-        path                = "/ping/"
+        path                = local.health_check_path
         matcher             = "200"
         interval            = 15
         healthy_threshold   = 3

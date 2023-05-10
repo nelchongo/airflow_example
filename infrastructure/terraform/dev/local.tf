@@ -19,4 +19,7 @@ locals {
         env = "dev"
         app = "data-analytics"
     }
+
+    #LB
+    health_check_path = "/health"
 }
