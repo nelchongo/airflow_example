@@ -1,22 +1,22 @@
 {
     "ipcMode": null,
-    "executionRoleArn": "arn:aws:iam::549532010890:role/data-analytics-execution",
+    "executionRoleArn": "arn:aws:iam::549532010890:role/airflow-execution",
     "containerDefinitions": [
         {
-            "name": "data-analytics",
+            "name": "airflow",
             "dnsSearchDomains": null,
             "environmentFiles": null,
             "secrets": [
                 {
-                    "valueFrom": "arn:aws:secretsmanager:us-east-1:549532010890:secret:dev/data-analytics-airflow/back-end-host-LtfnO2",
+                    "valueFrom": "arn:aws:secretsmanager:us-east-1:549532010890:secret:dev/airflow/back-end-host-cAf6U9",
                     "name": "AIRFLOW__DATABASE__SQL_ALCHEMY_CONN"
                 },
                 {
-                    "valueFrom": "arn:aws:secretsmanager:us-east-1:549532010890:secret:dev/data-analytics-airflow/back-end-host-LtfnO2",
+                    "valueFrom": "arn:aws:secretsmanager:us-east-1:549532010890:secret:dev/airflow/back-end-host-cAf6U9",
                     "name": "AIRFLOW__CORE__SQL_ALCHEMY_CONN"
                 },
                 {
-                    "valueFrom": "arn:aws:secretsmanager:us-east-1:549532010890:secret:dev/data-analytics-airflow/celery-back-end-host-QNBgM2",
+                    "valueFrom": "arn:aws:secretsmanager:us-east-1:549532010890:secret:dev/airflow/celery-back-end-host-Qxi315",
                     "name": "AIRFLOW__CELERY__RESULT_BACKEND"
                 }
             ],
@@ -77,7 +77,7 @@
             "memoryReservation": null,
             "volumesFrom": [],
             "stopTimeout": null,
-            "image": "549532010890.dkr.ecr.us-east-1.amazonaws.com/data-analytics:latest",
+            "image": "549532010890.dkr.ecr.us-east-1.amazonaws.com/airflow:latest",
             "startTimeout": null,
             "firelensConfiguration": null,
             "dependsOn": null,
@@ -168,15 +168,15 @@
             "workingDirectory": null,
             "secrets": [
                 {
-                    "valueFrom": "arn:aws:secretsmanager:us-east-1:549532010890:secret:dev/data-analytics-airflow/back-end-host-LtfnO2",
+                    "valueFrom": "arn:aws:secretsmanager:us-east-1:549532010890:secret:dev/airflow/back-end-host-cAf6U9",
                     "name": "AIRFLOW__DATABASE__SQL_ALCHEMY_CONN"
                 },
                 {
-                    "valueFrom": "arn:aws:secretsmanager:us-east-1:549532010890:secret:dev/data-analytics-airflow/back-end-host-LtfnO2",
+                    "valueFrom": "arn:aws:secretsmanager:us-east-1:549532010890:secret:dev/airflow/back-end-host-cAf6U9",
                     "name": "AIRFLOW__CORE__SQL_ALCHEMY_CONN"
                 },
                 {
-                    "valueFrom": "arn:aws:secretsmanager:us-east-1:549532010890:secret:dev/data-analytics-airflow/celery-back-end-host-QNBgM2",
+                    "valueFrom": "arn:aws:secretsmanager:us-east-1:549532010890:secret:dev/airflow/celery-back-end-host-Qxi315",
                     "name": "AIRFLOW__CELERY__RESULT_BACKEND"
                 }
             ],
@@ -185,7 +185,7 @@
             "memoryReservation": null,
             "volumesFrom": [],
             "stopTimeout": null,
-            "image": "549532010890.dkr.ecr.us-east-1.amazonaws.com/data-analytics:latest",
+            "image": "549532010890.dkr.ecr.us-east-1.amazonaws.com/airflow:latest",
             "startTimeout": null,
             "firelensConfiguration": null,
             "dependsOn": null,
@@ -274,15 +274,15 @@
             "workingDirectory": null,
             "secrets": [
                 {
-                    "valueFrom": "arn:aws:secretsmanager:us-east-1:549532010890:secret:dev/data-analytics-airflow/back-end-host-LtfnO2",
+                    "valueFrom": "arn:aws:secretsmanager:us-east-1:549532010890:secret:dev/airflow/back-end-host-cAf6U9",
                     "name": "AIRFLOW__DATABASE__SQL_ALCHEMY_CONN"
                 },
                 {
-                    "valueFrom": "arn:aws:secretsmanager:us-east-1:549532010890:secret:dev/data-analytics-airflow/back-end-host-LtfnO2",
+                    "valueFrom": "arn:aws:secretsmanager:us-east-1:549532010890:secret:dev/airflow/back-end-host-cAf6U9",
                     "name": "AIRFLOW__CORE__SQL_ALCHEMY_CONN"
                 },
                 {
-                    "valueFrom": "arn:aws:secretsmanager:us-east-1:549532010890:secret:dev/data-analytics-airflow/celery-back-end-host-QNBgM2",
+                    "valueFrom": "arn:aws:secretsmanager:us-east-1:549532010890:secret:dev/airflow/celery-back-end-host-Qxi315",
                     "name": "AIRFLOW__CELERY__RESULT_BACKEND"
                 }
             ],
@@ -291,7 +291,7 @@
             "memoryReservation": null,
             "volumesFrom": [],
             "stopTimeout": null,
-            "image": "549532010890.dkr.ecr.us-east-1.amazonaws.com/data-analytics:latest",
+            "image": "549532010890.dkr.ecr.us-east-1.amazonaws.com/airflow:latest",
             "startTimeout": null,
             "firelensConfiguration": null,
             "dependsOn": null,
@@ -374,15 +374,15 @@
             "workingDirectory": null,
             "secrets": [
                 {
-                    "valueFrom": "arn:aws:secretsmanager:us-east-1:549532010890:secret:dev/data-analytics-airflow/back-end-host-LtfnO2",
+                    "valueFrom": "arn:aws:secretsmanager:us-east-1:549532010890:secret:dev/airflow/back-end-host-cAf6U9",
                     "name": "AIRFLOW__DATABASE__SQL_ALCHEMY_CONN"
                 },
                 {
-                    "valueFrom": "arn:aws:secretsmanager:us-east-1:549532010890:secret:dev/data-analytics-airflow/back-end-host-LtfnO2",
+                    "valueFrom": "arn:aws:secretsmanager:us-east-1:549532010890:secret:dev/airflow/back-end-host-cAf6U9",
                     "name": "AIRFLOW__CORE__SQL_ALCHEMY_CONN"
                 },
                 {
-                    "valueFrom": "arn:aws:secretsmanager:us-east-1:549532010890:secret:dev/data-analytics-airflow/celery-back-end-host-QNBgM2",
+                    "valueFrom": "arn:aws:secretsmanager:us-east-1:549532010890:secret:dev/airflow/celery-back-end-host-Qxi315",
                     "name": "AIRFLOW__CELERY__RESULT_BACKEND"
                 }
             ],
@@ -391,7 +391,7 @@
             "memoryReservation": null,
             "volumesFrom": [],
             "stopTimeout": null,
-            "image": "549532010890.dkr.ecr.us-east-1.amazonaws.com/data-analytics:latest",
+            "image": "549532010890.dkr.ecr.us-east-1.amazonaws.com/airflow:latest",
             "startTimeout": null,
             "firelensConfiguration": null,
             "dependsOn": null,
@@ -482,8 +482,8 @@
     ],
     "cpu": "4096",
     "memory": "8192",
-    "taskRoleArn": "arn:aws:iam::549532010890:role/data-analytics-task",
-    "family": "data-analytics",
+    "taskRoleArn": "arn:aws:iam::549532010890:role/airflow-task",
+    "family": "airflow",
     "pidMode": null,
     "requiresCompatibilities": [
         "FARGATE"
@@ -500,7 +500,7 @@
     "tags": [
         {
             "key": "app",
-            "value": "data-analytics"
+            "value": "airflow"
         },
         {
             "key": "env",

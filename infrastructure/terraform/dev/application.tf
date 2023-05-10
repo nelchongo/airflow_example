@@ -1,5 +1,5 @@
 module "application" {
-    source = "git@github.com:NelsonECandia/fs_infrastructure.git?ref=v0.7"
+    source = "git@github.com:NelsonECandia/fs_infrastructure.git?ref=v0.8"
     app_name = "airflow"
     tags = {
         env = "dev"

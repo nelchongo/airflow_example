@@ -4,9 +4,9 @@ provider "aws" {
 }
 
 terraform {
-    backend "s3" {
-        bucket = "fs-infrastructure-bucket"
-        key    = "airflow/state"
-        region = "us-east-1"
-    }
+  backend "s3" {
+    bucket = "fs-infrastructure-bucket"
+    key    = "airflow/state"
+    region = "us-east-1"
+  }
 }

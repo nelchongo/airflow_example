@@ -1,8 +1,8 @@
 #!/bin/bash
 aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 549532010890.dkr.ecr.us-east-1.amazonaws.com
-docker build -t data-analytics .
-docker tag data-analytics:latest 549532010890.dkr.ecr.us-east-1.amazonaws.com/data-analytics:latest
-docker push 549532010890.dkr.ecr.us-east-1.amazonaws.com/data-analytics:latest
+docker build -t airflow .
+docker tag airflow:latest 549532010890.dkr.ecr.us-east-1.amazonaws.com/airflow:latest
+docker push 549532010890.dkr.ecr.us-east-1.amazonaws.com/airflow:latest
 
 # SUBNET0=subnet-087f5af8f359211b8
 # SUBNET1=subnet-03b3e610048528630
