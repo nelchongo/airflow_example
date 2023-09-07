@@ -8,15 +8,15 @@
             "environmentFiles": null,
             "secrets": [
                 {
-                    "valueFrom": "arn:aws:secretsmanager:us-east-1:549532010890:secret:dev/airflow/back-end-host-cAf6U9",
+                    "valueFrom": "arn:aws:secretsmanager:us-east-1:549532010890:secret:dev/airflow/back-end-host-PwFOhX",
                     "name": "AIRFLOW__DATABASE__SQL_ALCHEMY_CONN"
                 },
                 {
-                    "valueFrom": "arn:aws:secretsmanager:us-east-1:549532010890:secret:dev/airflow/back-end-host-cAf6U9",
+                    "valueFrom": "arn:aws:secretsmanager:us-east-1:549532010890:secret:dev/airflow/back-end-host-PwFOhX",
                     "name": "AIRFLOW__CORE__SQL_ALCHEMY_CONN"
                 },
                 {
-                    "valueFrom": "arn:aws:secretsmanager:us-east-1:549532010890:secret:dev/airflow/celery-back-end-host-Qxi315",
+                    "valueFrom": "arn:aws:secretsmanager:us-east-1:549532010890:secret:dev/airflow/celery-back-end-host-k9uU9g",
                     "name": "AIRFLOW__CELERY__RESULT_BACKEND"
                 }
             ],
@@ -168,15 +168,15 @@
             "workingDirectory": null,
             "secrets": [
                 {
-                    "valueFrom": "arn:aws:secretsmanager:us-east-1:549532010890:secret:dev/airflow/back-end-host-cAf6U9",
+                    "valueFrom": "arn:aws:secretsmanager:us-east-1:549532010890:secret:dev/airflow/back-end-host-PwFOhX",
                     "name": "AIRFLOW__DATABASE__SQL_ALCHEMY_CONN"
                 },
                 {
-                    "valueFrom": "arn:aws:secretsmanager:us-east-1:549532010890:secret:dev/airflow/back-end-host-cAf6U9",
+                    "valueFrom": "arn:aws:secretsmanager:us-east-1:549532010890:secret:dev/airflow/back-end-host-PwFOhX",
                     "name": "AIRFLOW__CORE__SQL_ALCHEMY_CONN"
                 },
                 {
-                    "valueFrom": "arn:aws:secretsmanager:us-east-1:549532010890:secret:dev/airflow/celery-back-end-host-Qxi315",
+                    "valueFrom": "arn:aws:secretsmanager:us-east-1:549532010890:secret:dev/airflow/celery-back-end-host-k9uU9g",
                     "name": "AIRFLOW__CELERY__RESULT_BACKEND"
                 }
             ],
@@ -274,15 +274,15 @@
             "workingDirectory": null,
             "secrets": [
                 {
-                    "valueFrom": "arn:aws:secretsmanager:us-east-1:549532010890:secret:dev/airflow/back-end-host-cAf6U9",
+                    "valueFrom": "arn:aws:secretsmanager:us-east-1:549532010890:secret:dev/airflow/back-end-host-PwFOhX",
                     "name": "AIRFLOW__DATABASE__SQL_ALCHEMY_CONN"
                 },
                 {
-                    "valueFrom": "arn:aws:secretsmanager:us-east-1:549532010890:secret:dev/airflow/back-end-host-cAf6U9",
+                    "valueFrom": "arn:aws:secretsmanager:us-east-1:549532010890:secret:dev/airflow/back-end-host-PwFOhX",
                     "name": "AIRFLOW__CORE__SQL_ALCHEMY_CONN"
                 },
                 {
-                    "valueFrom": "arn:aws:secretsmanager:us-east-1:549532010890:secret:dev/airflow/celery-back-end-host-Qxi315",
+                    "valueFrom": "arn:aws:secretsmanager:us-east-1:549532010890:secret:dev/airflow/celery-back-end-host-k9uU9g",
                     "name": "AIRFLOW__CELERY__RESULT_BACKEND"
                 }
             ],
@@ -374,15 +374,15 @@
             "workingDirectory": null,
             "secrets": [
                 {
-                    "valueFrom": "arn:aws:secretsmanager:us-east-1:549532010890:secret:dev/airflow/back-end-host-cAf6U9",
+                    "valueFrom": "arn:aws:secretsmanager:us-east-1:549532010890:secret:dev/airflow/back-end-host-PwFOhX",
                     "name": "AIRFLOW__DATABASE__SQL_ALCHEMY_CONN"
                 },
                 {
-                    "valueFrom": "arn:aws:secretsmanager:us-east-1:549532010890:secret:dev/airflow/back-end-host-cAf6U9",
+                    "valueFrom": "arn:aws:secretsmanager:us-east-1:549532010890:secret:dev/airflow/back-end-host-PwFOhX",
                     "name": "AIRFLOW__CORE__SQL_ALCHEMY_CONN"
                 },
                 {
-                    "valueFrom": "arn:aws:secretsmanager:us-east-1:549532010890:secret:dev/airflow/celery-back-end-host-Qxi315",
+                    "valueFrom": "arn:aws:secretsmanager:us-east-1:549532010890:secret:dev/airflow/celery-back-end-host-k9uU9g",
                     "name": "AIRFLOW__CELERY__RESULT_BACKEND"
                 }
             ],
