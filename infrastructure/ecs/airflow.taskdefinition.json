@@ -18,6 +18,10 @@
                 {
                     "valueFrom": "arn:aws:secretsmanager:us-east-1:549532010890:secret:dev/airflow/celery-back-end-host-k9uU9g",
                     "name": "AIRFLOW__CELERY__RESULT_BACKEND"
+                },
+                {
+                    "valueFrom": "arn:aws:secretsmanager:us-east-1:549532010890:secret:dev/airflow/airflow-webserver-secret-bvXmxK",
+                    "name" : "AIRFLOW__WEBSERVER__SECRET_KEY"
                 }
             ],
             "entryPoint": null,
@@ -178,6 +182,10 @@
                 {
                     "valueFrom": "arn:aws:secretsmanager:us-east-1:549532010890:secret:dev/airflow/celery-back-end-host-k9uU9g",
                     "name": "AIRFLOW__CELERY__RESULT_BACKEND"
+                },
+                {
+                    "valueFrom": "arn:aws:secretsmanager:us-east-1:549532010890:secret:dev/airflow/airflow-webserver-secret-bvXmxK",
+                    "name" : "AIRFLOW__WEBSERVER__SECRET_KEY"
                 }
             ],
             "dockerSecurityOptions": null,
@@ -284,6 +292,10 @@
                 {
                     "valueFrom": "arn:aws:secretsmanager:us-east-1:549532010890:secret:dev/airflow/celery-back-end-host-k9uU9g",
                     "name": "AIRFLOW__CELERY__RESULT_BACKEND"
+                },
+                {
+                    "valueFrom": "arn:aws:secretsmanager:us-east-1:549532010890:secret:dev/airflow/airflow-webserver-secret-bvXmxK",
+                    "name" : "AIRFLOW__WEBSERVER__SECRET_KEY"
                 }
             ],
             "dockerSecurityOptions": null,
@@ -384,6 +396,10 @@
                 {
                     "valueFrom": "arn:aws:secretsmanager:us-east-1:549532010890:secret:dev/airflow/celery-back-end-host-k9uU9g",
                     "name": "AIRFLOW__CELERY__RESULT_BACKEND"
+                },
+                {
+                    "valueFrom": "arn:aws:secretsmanager:us-east-1:549532010890:secret:dev/airflow/airflow-webserver-secret-bvXmxK",
+                    "name" : "AIRFLOW__WEBSERVER__SECRET_KEY"
                 }
             ],
             "dockerSecurityOptions": null,

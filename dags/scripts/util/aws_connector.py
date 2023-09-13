@@ -12,10 +12,9 @@ class aws_connector:
         self.project = project
 
     def put_s3_csv(self, data, filename:str):
-        try:
-            csv_buffer=StringIO()
-            data.to_csv(csv_buffer)
-            content = csv_buffer.getvalue()
-            self.s3.put_object(Body=content, Bucket=self.s3_bucket, Key=f'{self.project}/{filename}')
-        except:
-            print("Data couldn't be stored on s3 bucket")
+        print("Storing the data into:")
+        print(f'{self.project}/{filename}')
+        csv_buffer=StringIO()
+        data.to_csv(csv_buffer)
+        content = csv_buffer.getvalue()
+        self.s3.put_object(Body=content, Bucket=self.s3_bucket, Key=f'{self.project}/{filename}')

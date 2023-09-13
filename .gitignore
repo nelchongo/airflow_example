@@ -1,6 +1,7 @@
 /logs/*
 /plugins
 .terraform*
+.DS_Store
 
 #pyhton
 __pycache__
