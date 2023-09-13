@@ -48,7 +48,6 @@ def offset_processing_pool(table):
 
 def table_processing(table):
     if table["offset"] == True:
-        print("TEST")
         results = offset_processing(table)
     else:
         results = get_data(table["url"])
@@ -57,10 +56,3 @@ def table_processing(table):
     if table['selected_fields'] != []:
         results = results[table['selected_fields']]
     aws.put_s3_csv(results, '{}.csv'.format(table['name']))
-
-# #TESTING PURPOSE
-# from extraction_dummy_tables import TABLES
-
-# if __name__ == "__main__":
-#     for table in TABLES:
-#         table_processing(table)

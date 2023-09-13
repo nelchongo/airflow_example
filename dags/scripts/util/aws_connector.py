@@ -12,8 +12,7 @@ class aws_connector:
         self.project = project
 
     def put_s3_csv(self, data, filename:str):
-        print("Storing the data into:")
-        print(f'{self.project}/{filename}')
+        print(f"Storing the data into: {self.project}/{filename}")
         csv_buffer=StringIO()
         data.to_csv(csv_buffer)
         content = csv_buffer.getvalue()
