@@ -4,8 +4,7 @@ docker build -t airflow .
 docker tag airflow:latest 549532010890.dkr.ecr.us-east-1.amazonaws.com/airflow:latest
 docker push 549532010890.dkr.ecr.us-east-1.amazonaws.com/airflow:latest
 
-# SUBNET0=subnet-087f5af8f359211b8
-# SUBNET1=subnet-03b3e610048528630
-# SECURITY_GROUP=sg-0537ef8b6f87aeff1
-# REVISION=$(aws ecs describe-task-definition --task-definition data-analytics | egrep \"revision\" | grep -Eo '[0-9]{1,4}')
-# aws ecs --action taskrun --cluster data-analytics --taskDefinition data-analytics:${REVISION} --subnet ${SUBNET0} --subnet ${SUBNET1} --securityGroup ${SECURITY_GROUP}
+# SUBNET0=subnet-0c96439cc947268d3
+# SECURITY_GROUP=sg-0ac2a0618d01846eb
+# REVISION=$(aws ecs describe-task-definition --task-definition airflow | egrep \"revision\" | grep -Eo '[0-9]{1,4}')
+# aws ecs run-task --task-definition airflow:${REVISION} --cluster airflow --count 1 --network-configuration "awsvpcConfiguration={subnets=["${SUBNET0}"],securityGroups=["${SECURITY_GROUP}"]}" --enable-execute-command
