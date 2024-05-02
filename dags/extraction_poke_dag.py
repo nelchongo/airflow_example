@@ -19,11 +19,11 @@ def dynamic_extraction_from_api(table):
     )
 
 default_args = {
-    'owner': 'FS',
+    'owner': 'its me Im the problem is me',
     'depends_on_past': True,
-    'start_date': datetime(2023, 9, 13, 0, 0, 0),
-    'email': ['nelson.candia@futurumsoft.com'],
-    'email_on_failure': 'nelson.candia@futurumsoft.com',
+    'start_date': datetime(2024, 2, 2, 0, 0, 0),
+    'email': ['Yes i did use a taylor swift song'],
+    'email_on_failure': 'no theres no problem',
     'email_on_retry': False,
     'retries': 1,
     'retry_delay': timedelta(minutes=5),

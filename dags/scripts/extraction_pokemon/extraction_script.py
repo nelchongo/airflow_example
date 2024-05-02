@@ -4,8 +4,7 @@ from scripts.util.requests import requests_class
 from multiprocessing import Pool, cpu_count
 from scripts.util.aws_connector import aws_connector
 
-script_url = "https://pokeapi.co/api/v2/"
-request_c = requests_class(script_url)
+request_c = requests_class("https://pokeapi.co/api/v2/")
 aws = aws_connector('fs-data-terraform-dev', 'pokemon')
 
 def get_data(url, offset:int = 0, limit:int = 0):
@@ -22,28 +21,13 @@ def offset_processing(table):
     #divide number of queries by CPUs to optimized and properly distribute the load
     total = 100
     limit = 10
-    offset_list = np.array(list(range(round(total/limit)))) * limit
+    offset_list = np.arange(0, total, limit)
 
     results = []
     for off in offset_list:
         results.append(get_data(table["url"], off, limit))
 
     results = pd.concat(results)
-    return results
-
-def offset_processing_pool(table):
-    #divide number of queries by CPUs to optimized and properly distribute the load
-    total = 100
-    limit = 1 if (round(total / cpu_count() - 1)) < 1 else round(total / (cpu_count() - 2))
-    offset_list = np.array(list(range(round(total/limit)))) * limit
-
-    #Parallel processing
-    pool = Pool(cpu_count() - 1)
-    async_results = [pool.apply_async(get_data, args=(table["url"],i, limit)) for i in offset_list]
-    results = pd.concat([ar.get() for ar in async_results])
-    pool.close()
-    pool.join()
-
     return results
 
 def table_processing(table):
@@ -55,4 +39,5 @@ def table_processing(table):
     #Selecting selected fields for tables
     if table['selected_fields'] != []:
         results = results[table['selected_fields']]
-    aws.put_s3_csv(results, '{}.csv'.format(table['name']))
+    print(results)
+    # aws.put_s3_csv(results, '{}.csv'.format(table['name']))
