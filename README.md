@@ -57,3 +57,9 @@ Credentials:
 
     user: airflow
     password: airflow
+
+## Work flow example
+
+In this project we are just extracting some data of a pokemon API but this could be a potential workflow for a Big Data Project
+
+<img src="./analytics_example.png" width="600" alt="accessibility text">
